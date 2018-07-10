@@ -1,0 +1,67 @@
+/*
+ * =========================================================
+ * @ filename : _require.scss
+ * @ desc     : 公共文件引入
+ *
+ * @ email    :
+ * @ author   :
+ * ==========================================================
+ */
+
+
+
+// compass 常用方法引入
+@import "compass/reset";
+@import "compass/css3";
+
+
+// 自定义的一些方法
+@import "variables";
+@import "mod";
+@import "component/component";
+
+*,*:before,*:after{
+    margin:0;
+    padding:0;
+ }
+body{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+    font-size: $browser-default-font-size;
+}
+
+a, button, input, textarea, select{
+    -webkit-tap-highlight-color: transparent;
+    tap-highlight-color: transparent;
+}
+a{
+    text-decoration: none;
+}
+
+input{
+    border: 0 none;
+    outline: 0 none;
+}
+
+button,
+html input[type="button"], /* 1 */
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance: button; /* 2 */
+    cursor: pointer; /* 3 */
+}
+
+// 隐藏VUE元素
+[v-cloak] {
+    opacity: 0;
+}
+
+.clearFix:before,.clearFix:after {
+    content:"";
+    display:table;
+}
+.clearFix:after {
+    clear:both;
+    overflow:hidden;
+}

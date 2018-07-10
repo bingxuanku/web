@@ -1,0 +1,60 @@
+{
+    "server": {
+        "port": 8080
+    },
+    "release": {
+        "project": "mypro",
+        "domain": "//s1.yyfq.com",
+
+        "cases": {
+            "dev": {
+                "watch": true,
+                "version": false,
+                "optimize": false,
+                "env": {
+                    "ENV": "LOCAL",
+                    "STATIC_URL": ""
+                }
+            },
+            "qa": {
+                "domain": true,
+                "watch": false,
+                "version": true,
+                "optimize": false,
+                "www": "../__dist/",
+                "env": {
+                    "ENV": "QA",
+                    "STATIC_URL": ""
+                }
+            },
+            "www": {
+                "watch": false,
+                "version": true,
+                "optimize": true,
+                "domain": true,
+                "www": "../__dist/",
+                "env": {
+                    "ENV": "ONLINE",
+                    "STATIC_URL": ""
+                }
+            }
+        },
+
+        "copy": [
+            "**/*.min.js",
+            "**/*.min.css",
+            "**/vue*.js"
+        ],
+        "ignore": [
+            "yypack.json"
+        ],
+        "externals": {
+        },
+        "postcss": {
+        }
+    },
+    "deploy": {
+        "beRelease": "",
+        "feReleaseGit": ""
+    }
+}
